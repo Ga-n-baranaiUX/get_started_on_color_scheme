@@ -1,0 +1,29 @@
+<div class="color-selector">
+    <div class="left-panel">
+
+        <svg:svg xmlns="http://www.w3.org./2000/svg" [attr.viewBox]="viewBox" class="color-wheel" >        
+    
+            <svg:g app-color-wheel 
+                [controllable]="true"
+                [tone]="selectedTone" 
+                [center]="{ x: 0, y: 0 }" 
+                [colorWheelSize]="50"
+                [colorWheelWidth]="10"
+                [colorWheelPadding]="2"></svg:g>
+                
+        </svg:svg>
+
+        <app-color-pallete></app-color-pallete>    
+    </div>
+    <div class="right-panel">
+
+        <app-controller></app-controller>
+
+        <svg:svg xmlns="http://www.w3.org./2000/svg" [attr.viewBox]="tonesViewBox" class="tones" >
+            <svg:g app-tones></svg:g>
+        </svg:svg>
+
+    </div>    
+</div>
+
+<app-voice-meets></app-voice-meets>

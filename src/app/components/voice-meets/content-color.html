@@ -1,0 +1,10 @@
+<div class="content-color-wrapper" 
+    [ngClass]="{ 'dragging-over': draggingOver }"
+    (dragover)="dragOver($event)" (dragleave)="dragOut()" (drop)="drop($event)">
+
+    <div #contenColorElm class="content-color" [ngStyle]="{ 'background-color': color }"></div>
+
+    <div class="type">{{ type }}</div>
+    <div class="rgb">{{ colorText }}</div>
+
+</div>

@@ -1,0 +1,65 @@
+<svg:g [ngClass]="{
+  controllable: controllable
+}">
+
+
+  <!-- center cross -->
+  <!-- <line x1="-10" y1="0" x2="10" y2="0"></line>
+  <line x1="0" y1="-10" x2="0" y2="10"></line> -->
+
+  <!-- color -->
+  <ng-container *ngFor="let color of colors; let idx = index;">
+    <svg:path [attr.d]="color.pathD" 
+        [ngStyle]="colorStyle(color)" 
+        [ngClass]="{ 
+          hovered: hoveredColor === color,
+          selected: selected(color)
+        }"
+        (mousemove)="hoveredColor=color"
+        (mouseout)="hoveredColor=null"
+        (click)="selectColor(color)" />
+  </ng-container>
+
+
+  <svg:circle *ngIf="showOutline" class="outline" [attr.cx]="center.x" [attr.cy]="center.y" [attr.r]="colorWheelSize"></svg:circle>
+  <svg:circle *ngIf="showOutline" class="outline" [attr.cx]="center.x" [attr.cy]="center.y" [attr.r]="colorWheelSize - colorWheelWidth"></svg:circle>
+
+  <!-- selection guideline -->
+  <!-- <ng-container *ngFor="let gp of guidelinePaths; let idx = index;">
+    <path [attr.d]="gp" 
+        class="selection-guideline" />
+  </ng-container> -->
+
+  <!-- <ng-container *ngFor="let gp of guidelinePoints; let idx = index;">
+    <polygon [attr.points]="gp" 
+        class="selection-guideline" />
+  </ng-container> -->
+
+  <!-- <svg:marker id="m" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="strokeWidth" preserveAspectRatio="none" markerWidth="2" markerHeight="3" orient="auto">
+    <svg:polygon points="0,0 5,5 0,10 10,5" fill="red"/>
+  </svg:marker> -->
+
+  <defs>
+      <marker id="mu_mh" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" viewBox="0 0 80 80" refX="40" refY="40" orient="auto">
+          <polygon points="80,0 40,40 80,80 0,40 " fill="black"/>
+      </marker>
+  </defs>
+
+  <!-- <svg:line 
+    x1="30" y1="25" x2="70" y2="25" stroke-width="1" marker-end="url(#mu_mh)" stroke="#000000" />
+ -->
+  <ng-container *ngFor="let gl of guidelineLines; let idx = index;">
+    <ng-container *ngIf="gl.show">
+      <svg:line 
+        marker-start="url(#mu_mh)"
+        [attr.x1]="gl.x1"
+        [attr.y1]="gl.y1"
+        [attr.x2]="gl.x2"
+        [attr.y2]="gl.y2" 
+        class="selection-guideline" />
+    </ng-container>
+  </ng-container>
+
+  <!-- <svg:circle *ngIf="mainColorPos" class="main-color-pos" [attr.cx]="mainColorPos.x" [attr.cy]="mainColorPos.y" r="3" /> -->
+
+</svg:g>

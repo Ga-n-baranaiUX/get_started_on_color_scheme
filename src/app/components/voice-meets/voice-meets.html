@@ -1,0 +1,73 @@
+<div class="voice-meets-wrapper">
+
+    <div class="color-area">
+        <app-content-color type="Base"></app-content-color>
+        <app-content-color type="Main1"></app-content-color>
+        <app-content-color type="Main2"></app-content-color>
+        <app-content-color type="Accent"></app-content-color>
+        <app-content-color type="Logo"></app-content-color>
+        <app-content-color type="Text"></app-content-color>
+        <app-content-color type="HeaderText"></app-content-color>
+
+        <div class="color-pallete-area">
+
+            <input type="color" [(ngModel)]="freeColorCode" />
+
+            <ng-container *ngFor="let color of [ freeColorCode, '#000000', '#ffffff' ];">
+                <div class="color-pallete" 
+                    [ngStyle]="{ 'background-color': color }" 
+                    draggable="true" 
+                    (dragstart)="dragStart($event, color)"></div>
+            </ng-container>    
+        </div>
+    </div>
+
+    <div class="voice-meets" [ngStyle]="{ 'background-color': baseColor, 'color': textColor }">
+        <!-- header 1 -->
+        <div class="header-1" [ngStyle]="{ 'background-color': main1Color, color: headerTextColor }">
+            <div class="logo" [ngStyle]="{ color: logoColor }">VOICE MEETS</div>
+            <div class="search" [ngStyle]="{ 'background-color': baseColor }">検索</div>
+            <div class="signin">サインイン</div>
+            <button class="signup" [ngStyle]="{ 'background-color': accentColor, color: textColor}">会員登録</button>
+        </div>
+        <!-- header 2 -->
+        <div class="header-2" [ngStyle]="{ 'background-color': main1Color, color: headerTextColor }">
+            <div class="menu-item selected">声を探したい</div>
+            <div class="menu-item">声を届けたい</div>
+            <div class="menu-item">応援したい</div>
+            <!-- <div class="menu-item">声を届けたい</div> -->
+            <div class="menu-item">はじめての方へ</div>
+            <div class="menu-item">導入事例</div>
+
+            <div class="menu-item sitemap">サイトマップ</div>
+        </div>
+        <!-- content -->
+        <div class="content">
+            <div class="photo-area">
+                <div class="photo" [ngStyle]="{ 'background-color': main2Color }"></div>
+                <div class="main-photo" [ngStyle]="{ 'background-color': main2Color }">
+                    <div class="canvas" contenteditable="true" (input)="input($event)"></div>
+                    <button class="more" [ngStyle]="{ 'background-color': accentColor, color: textColor}">もっと見る</button>
+                    <!-- <img id="outputImage" /> -->
+                </div>
+                <div class="photo" [ngStyle]="{ 'background-color': main2Color }"></div>    
+            </div>
+
+            <div class="photo-controller">
+                <div class="selected"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="section">
+                <div class="caption">ボイスワーク、ソフトウェアトーク、ユーザーをつなぐマッチングプラットフォーム</div>
+                <div class="text"></div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer" [ngStyle]="{ 'background-color': main1Color }"></div>
+        
+    </div>
+
+</div>

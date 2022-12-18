@@ -1,0 +1,51 @@
+<svg:g >
+
+  <svg:rect class="outline" x="-20" y="-15" width="30" height="130"></svg:rect>
+
+  <svg:path class="outline" d="M 10 -15 A 80 50 0 0 1 10 115 Z"></svg:path>
+
+  <ng-container *ngFor="let tone of displayToneGroups; let idx = index;">
+    <svg:circle class="tone" 
+        [attr.cx]="tone.s" [attr.cy]="tone.l" r="12"
+        (click)="selectTone(tone.name)">
+    </svg:circle>
+
+    <ng-container *ngIf="!showDescription">
+      <svg:text class="tone-name" [attr.x]="tone.s" [attr.y]="tone.l"
+        dominant-baseline="central"
+        text-anchor="middle">{{ tone.name }}</svg:text>
+    </ng-container>
+
+    <ng-container *ngIf="showDescription">
+
+      <ng-container *ngFor="let description of descriptions(tone); let idx = index;">
+        <svg:text class="tone-description" [attr.x]="tone.s" [attr.y]="tone.l + idx * 4 - 7.5"
+          dominant-baseline="central"
+          text-anchor="middle">{{ description }}</svg:text>          
+      </ng-container>
+  
+    </ng-container>
+
+    <ng-container *ngIf="showColors">
+        <svg:g app-color-wheel 
+          [tone]="tone.name" 
+          [center]="{ x: tone.s, y: tone.l }" 
+          [colorWheelSize]="12"
+          [colorWheelWidth]="showDescription ? 2 : 4"
+          [colorWheelPadding]="6"></svg:g>
+      </ng-container>
+
+      <ng-container *ngFor="let color of tone.selectedColors; let idx = index;">
+        <svg:circle class="selected-color" [attr.cx]="tone.s" [attr.cy]="tone.l" [attr.r]="13 + 2 * idx" [attr.stroke]="color.color" fill="none"></svg:circle>
+      </ng-container>
+
+
+    <!-- <ng-container *ngIf="tone.s <= 0">
+      <svg:circle class="tone" [attr.cx]="tone.s" [attr.cy]="tone.l" r="12"></svg:circle>
+    </ng-container>
+    <ng-container *ngIf="tone.s > 0">
+      <svg:circle class="tone" [attr.cx]="tone.s" [attr.cy]="tone.l" r="12"></svg:circle>
+    </ng-container> -->
+  </ng-container>
+
+</svg:g>

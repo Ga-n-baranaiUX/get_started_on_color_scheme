@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+$yellow: hsl(60, 100%, 50%);
+$blue: hsl(240, 100%, 50%);
+$red: hsl(0, 100%, 50%);
+
+$orange: hsl(39, 100%, 50%);
+$purple: hsl(300, 100%, 25%);
+$green: hsl(120, 100%, 25%);
+
+@font-face {
+    font-family: "hiragino";
+    src: url("/assets/fonts/hiragino.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "hiragino2";
+    src: url("/assets/fonts/hiragino2.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "mukashi";
+    src: url("/assets/fonts/gomarice_mukasi_mukasi.TTF") format("truetype");
+}

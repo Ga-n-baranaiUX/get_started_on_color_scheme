@@ -1,0 +1,14 @@
+<div class="controller">
+
+    <ng-container *ngFor="let mode of modes; let idx = index;">
+        <div class="row">
+            <input type="radio" 
+                name="modes" 
+                [id]="'modes_' + idx"
+                [value]="mode"
+                [(ngModel)]="selectionMode" />
+            <label [for]="'modes_' + idx">{{ mode }}</label>
+        </div>
+    </ng-container>
+
+</div>

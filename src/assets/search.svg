@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg x="0pt" y="0pt" width="24pt" height="24pt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="1">
+    <title>Layer 1</title>
+    <defs>
+      <title>Path</title>
+      <g id="2">
+        <defs>
+          <path id="3" d="M10.9477,2.73935 C15.4474,2.73935,19.0951,6.38705,19.0951,10.8867 C19.0951,15.3864,15.4474,19.0341,10.9477,19.0341 C6.44802,19.0341,2.80032,15.3864,2.80032,10.8867 C2.80032,6.38705,6.44802,2.73935,10.9477,2.73935 z"/>
+        </defs>
+        <use xlink:href="#3" style="fill:#aaaaaa;fill-opacity:1;fill-rule:evenodd;opacity:0;stroke:none;"/>
+        <use xlink:href="#3" style="fill:none;opacity:1;stroke:#aaaaaa;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1;"/>
+      </g>
+    </defs>
+    <use xlink:href="#2"/>
+    <defs>
+      <title>Path</title>
+      <g id="4">
+        <defs>
+          <path id="5" d="M16.6674,16.9057 C16.6674,16.9057,20.6968,21.0766,20.6968,21.0766"/>
+        </defs>
+        <use xlink:href="#5" style="fill:#aaaaaa;fill-opacity:1;fill-rule:evenodd;opacity:0;stroke:none;"/>
+        <use xlink:href="#5" style="fill:none;opacity:1;stroke:#aaaaaa;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-width:1;"/>
+      </g>
+    </defs>
+    <use xlink:href="#4"/>
+  </g>
+</svg>

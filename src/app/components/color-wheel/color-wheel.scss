@@ -1,0 +1,62 @@
+@import url(../../../styles.scss);
+
+g {
+    &.controllable {
+        pointer-events: all;
+    }
+
+    &:not(.controllable) {
+        pointer-events: none;
+
+        .main-color-pos,
+        .selection-guideline {
+            opacity: 0.0;
+        }
+
+    }
+
+
+
+    .outline {
+        fill: none;
+        stroke: rgba(0, 0, 0, 0.5);
+        stroke-width: 0.25px;
+        pointer-events: none;
+    }
+
+    path {
+        // fill: none;
+        // stroke: #FF0000;
+        // stroke-width: 1px;
+
+        &.hovered {
+            stroke-width: 0.5px;
+            stroke: #000000;
+            // transition: all 0.3s;
+            // transform-origin: center middle;
+            // transform: scale(1.1);
+        }
+    }
+
+    // line {
+    //     stroke: #EEEEEE;
+    //     stroke-width: 1px;
+    // }
+
+    path.selection-guideline,
+    polygon.selection-guideline,
+    line.selection-guideline {
+        stroke-width: 0.5px;
+        stroke: #000000;
+        fill: none;
+        transition: all 0.3s;
+    }
+
+    .main-color-pos {
+        stroke-width: 0.5px;
+        stroke: #888888;
+        fill: none;
+        // transition: all 0.3s;
+    }
+
+}

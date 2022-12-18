@@ -1,0 +1,39 @@
+$left-panel-width: 400px;
+
+
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-selector {
+    width: 100%;
+    display: flex;
+
+    .left-panel {
+        width: $left-panel-width;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        .color-wheel {
+            width: 300px;
+            height: 300px;
+        }
+    }
+    
+    .right-panel {
+        width: calc(100% - #{$left-panel-width});
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        .tones {
+            width: 400px;
+            height: 400px;
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+@import url(../../../styles.scss);
+
+.controller {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    max-height: 200px;
+    
+    .row {
+        height: 40px;
+        
+        display: flex;
+        align-items: center;
+
+        input[type="radio"]:checked + label {
+            font-weight: 700;
+        }
+
+        label {
+            box-sizing: border-box;
+            margin-left: 8px;
+        }
+    }
+}

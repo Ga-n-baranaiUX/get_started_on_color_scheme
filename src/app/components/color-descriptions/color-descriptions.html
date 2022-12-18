@@ -1,0 +1,26 @@
+<div class="color-descriptions">
+    <ng-container *ngFor="let description of descriptions">
+        <div class="description-card">
+
+            <div class="color-bar" [ngStyle]="{ 'background-color': description.color }"></div>
+
+            <div class="name">
+                <svg:svg xmlns="http://www.w3.org./2000/svg" viewBox="0 0 80 80">
+                    <svg:text  x="50%" y="50%" text-anchor="middle" dominant-baseline="central" writing-mode="tb"
+                        [ngStyle]="{ fill: description.textColor || description.color }">{{ description.name }}</svg:text>
+                </svg:svg>
+            </div>
+            <div class="image" [ngStyle]="{ 'background-image': imageUrl(description)  }"></div>
+            <div class="info">
+                <div class="row">
+                    <div class="caption">ポジティブ</div>
+                    <div class="text">{{ description.positive }}</div>
+                </div>
+                <div class="row">
+                    <div class="caption">ネガティブ</div>
+                    <div class="text">{{ description.negative }}</div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

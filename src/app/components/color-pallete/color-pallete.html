@@ -1,0 +1,26 @@
+<div class="color-pallete">
+    <ng-container *ngFor="let color of sortedColors; let idx = index;">
+        <ng-container *ngIf="color">
+            <div class="color-info">
+                <div class="color" 
+                    [ngStyle]="{
+                        'background-color': color.color
+                    }"
+                    (mousemove)="hoveredColor=color"
+                    (mouseout)="hoveredColor=null"
+                    (click)="clickColor($event)"
+                    draggable="true"
+                    (dragstart)="dragStart($event, color)"
+                ></div>
+                <div class="rgb r">{{ floor(color.r) }}</div>
+                <div class="rgb g">{{ floor(color.g) }}</div>
+                <div class="rgb b">{{ floor(color.b) }}</div>
+                <div class="rgb hex">{{ hex(color) }}</div>
+
+            </div>
+        </ng-container>
+        <ng-container *ngIf="!color">
+            <span>Error!</span>
+        </ng-container>
+    </ng-container>
+</div>

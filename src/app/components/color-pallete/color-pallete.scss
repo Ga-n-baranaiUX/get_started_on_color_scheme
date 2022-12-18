@@ -1,0 +1,53 @@
+@import url(../../../styles.scss);
+
+.color-pallete {
+    min-width: 100px;
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    // border: solid 1px red;
+
+    .color-info {
+        display: flex;
+        flex-direction: column;
+
+        box-sizing: border-box;
+        margin-right:  8px;
+
+        .color {
+            width: 50px;
+            height: 50px;
+        }
+    
+        .rgb {
+            width: 50px;
+            height: auto;
+
+            display: flex;
+            align-items: center;
+    
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0px 16px 0px 0px;
+            font-size: 12px;
+
+            white-space: nowrap;
+
+            &.r::before { content: "R"; }
+            &.g::before { content: "G"; }
+            &.b::before { content: "B"; }
+
+            &::before {
+                display: flex;
+                align-items: center;
+
+                font-weight: 700;
+                margin-right: auto;
+            }
+        }    
+    }
+
+}

@@ -1,0 +1,35 @@
+@import url(../../../styles.scss);
+
+$line-width: 0.3px;
+
+g {
+
+    .outline {
+        stroke: #000000;
+        stroke-width: $line-width;
+        fill: none;
+    }
+
+    .tone {
+        stroke: #000000;
+        stroke-width: $line-width;
+        fill: none;
+
+        pointer-events: all;
+        cursor: pointer;
+    }
+
+    text {
+        pointer-events: none;
+    }
+
+    .tone-name {
+        font-size: 8px;
+    }
+
+    .tone-description {
+        font-size: 2px;
+        filter: drop-shadow(3px 3px 5px #000);
+    }
+
+}
